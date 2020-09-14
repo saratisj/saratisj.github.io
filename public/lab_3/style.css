@@ -64,7 +64,11 @@ body > * {
   padding: 1%;
 }
 
+<<<<<<< HEAD
 .main, .header, nav, .article, .aside, .footer, section {
+=======
+.main, .header, nav, .article, .aside, footer, section {
+>>>>>>> 0a50ea8fd057061ede6f4730cc3f934bd9cad3bc
   background-color: rgba(0,255,0,0.5);
   padding: 1%;
 }
@@ -74,7 +78,11 @@ h1 {
   text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 .header img {
+=======
+header img {
+>>>>>>> 0a50ea8fd057061ede6f4730cc3f934bd9cad3bc
   display: block;
   height: 60px;
   padding-top: 20.15px;

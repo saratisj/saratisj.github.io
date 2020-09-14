@@ -28,7 +28,16 @@ const htmlValidateConfig = {
     'close-order': 'error',
     'no-conditional-comment': 0,
     'require-sri': 0,
+<<<<<<< HEAD
     void: ['off']
+=======
+    void: [
+      'warn',
+      {
+        style: 'omit'
+      }
+    ]
+>>>>>>> 0a50ea8fd057061ede6f4730cc3f934bd9cad3bc
   }
 };
 
