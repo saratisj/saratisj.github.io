@@ -13,7 +13,8 @@ import {
   processHTML,
   excludeNonHTML,
   excludeAnswerKey,
-  severeErrorCheck
+  severeErrorCheck,
+  excludeInstructions
   // generateFixtureForTests
 } from './functions.js';
 
@@ -48,15 +49,17 @@ if (obj) {
       console.log('Fixtures updated for testing');
     }
   });
-  recursiveReaddir('./public', [excludeNonHTML, excludeAnswerKey, '.DS_Store'])
+  recursiveReaddir('./public', [excludeNonHTML, excludeAnswerKey, excludeInstructions, '.DS_Store'])
   // for each file in data, we're going to want to run the validator and output an updated file.
   // this needs to happen asynchronously because each process is its own thing
     .then((data) => Promise.all(data.map((m) => processHTML(m))))
     .then((data) => data.filter((f) => f.errors.length > 0))
-    // .then((data) => data.map((m) => {
-    //   m.title = m.filename.match(/lab_\d+/g)[0]; // TODO: Replace this with a config file
-    //   return m;
-    // }))
+    .then((data) => data.map((m) => {
+      const titleArr = m.filename.match(/lab_\d+/g);
+      m.title = titleArr ? titleArr[0] : m.filename;
+      console.log('Checked ', m.title);
+      return m;
+    }))
     .then((data) => data.map((m) => severeErrorCheck(m)))
     .then((data) => {
       console.log(
@@ -65,6 +68,23 @@ if (obj) {
       // if any document has severe errors, list it and put it in a table
       // and block cypress launch
       let blockCypress; // TODO: add a cypress launch
+<<<<<<< HEAD
+      const severe = data.filter((f) => f.severe.length > 0);
+      if (severe.length > 0) {
+        severe.forEach((d) => {
+          blockCypress = true;
+          console.log('\n');
+          console.log(chalk.red.bold(`${d.title} has breaking errors`));
+          console.table(d.severe);
+          console.error(
+            `Please repair your HTML in ${d.title} before proceeding with the lab.\n`
+          );
+        });
+      } else {
+      // Else green to go and good luck with lab problems.
+        console.log(
+          chalk.green.bold('No major problems detected! Good luck with your lab.')
+=======
 
       if (data.length > 0) {
         const str = data.length === 1 ? 'document has' : 'documents have';
@@ -90,11 +110,16 @@ if (obj) {
       // Else green to go and good luck with lab problems.
         console.log(
           chalk.green.bold('No invalid HTML detected! Good luck with your lab.')
+>>>>>>> 0a50ea8fd057061ede6f4730cc3f934bd9cad3bc
         );
       }
 
       if (!blockCypress) {
+<<<<<<< HEAD
+        spawn('node_modules/.bin/cypress', ['open'], {shell: process.platform === 'win32'});
+=======
         spawn('node_modules/.bin/cypress', ['open']);
+>>>>>>> 0a50ea8fd057061ede6f4730cc3f934bd9cad3bc
       }
     })
     .catch((err) => console.log(err));
