@@ -41,10 +41,6 @@ body {
   justify-content: space-between;  
 }
 
-.flex-outer > li:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 .flex-outer li label,
 .flex-outer li p {
   padding: 8px;
