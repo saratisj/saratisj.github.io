@@ -11,10 +11,6 @@ body {
   margin: 0;
 }
 
-.container * {
-  box-sizing: border-box;
-}
-
 .flex-outer,
 .flex-inner {
   padding: 0;
