@@ -23,8 +23,8 @@ body {
 
 .flex-outer {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .flex-outer li,
