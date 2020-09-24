@@ -37,9 +37,6 @@ body {
   justify-content: space-between;  
 }
 
-.flex-outer > li:not(:last-child) {
-  margin-bottom: 20px;
-}
 
 .flex-outer li label,
 .flex-outer li p {
@@ -47,6 +44,7 @@ body {
   font-weight: 300;
   letter-spacing: .09em;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .flex-outer > li > label,
@@ -55,7 +53,6 @@ body {
   max-width: 225px;
 }
 
-.flex-outer > li > label + *,
 .flex-inner {
   flex: 1 0 225px;
 }
