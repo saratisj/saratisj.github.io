@@ -75,6 +75,7 @@ body {
   background: rgb(182, 138, 72);
   color: #f2f2f2;
   border-radius: 3px;
+  text-transform: uppercase;
 }
 
 .flex-inner li {
