@@ -24,6 +24,7 @@ body {
 .flex-outer {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 auto
 }
 
 .flex-outer li,
@@ -84,7 +85,7 @@ body {
   color: #f2f2f2;
   text-transform: uppercase;
   letter-spacing: .09em;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .flex-inner li {
