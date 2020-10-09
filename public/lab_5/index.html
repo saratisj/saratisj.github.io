@@ -76,6 +76,21 @@
                 console.log(text);
                 el.innerText = fruitArray[i];
             })
+
+            const bgcolor = 'rgb(' + (219) + ',' + (243) + ',' + (238) + ')'
+            document.body.style.backgroundColor = bgcolor;
+
+            const head = document.querySelector('h1')
+            head.innerHTML = response;
+
+            const ttl = document.querySelector('title')
+            ttl.innerHTML = response;
+
+            const lel = document.querySelector('.checkbox-list-label')
+            lel.innerHTML = 'Fruits';
+
+            const center = document.querySelector('.flex-outer')
+            center.style = 'margin: 0 auto;';
             })
         }
 
