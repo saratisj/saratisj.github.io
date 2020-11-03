@@ -2,37 +2,37 @@ function convertRestaurantsToCategories(restaurantList) {
   // process your restaurants here!
   const categoryArray = [];
   const result = {};
-  for (let i=0; i < restaurantList.length; i+=1) {
+  for (let i = 0; i < restaurantList.length; i += 1) {
     categoryArray.push(restaurantList[i].category);
   }
-  for (let i=0; i < categoryArray.length; i+=1) {
+  for (let i=0; i < categoryArray.length; i += 1) {
     if (!result[categoryArray[i]]) {
       result[categoryArray[i]] = 0;
     }
-    result[categoryArray[i]] +=1;
+    result[categoryArray[i]] += 1;
   }
   const list = Object.keys(result).map((category) => ({
-  y: result[category], label: category
-  })));
+    y: result[category], label: category
+  }));
   return list;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
-  CanvasJS.addColorSet("customColorSet1",
-    [//colorSet Array
-    "#4661EE",
-    "#EC5657",
-    "#1BCDD1",
-    "#8FAABB",
-    "#EB8CC6"
-   ]);
+  CanvasJS.addColorSet('customColorSet1',
+    [ // colorSet Array
+      '#4661EE',
+      '#EC5657',
+      '#1BCDD1',
+      '#8FAABB',
+      '#EB8CC6'
+    ]);
 
   return {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Places to Eat Out in Future'
+      text: 'Places To Eat Out In Future'
     },
     axisX: {
       interval: 1,
@@ -43,23 +43,24 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
       gridColor: 'rgba(1,77,101,.1)',
       title: 'Types of Food',
       labelFontSize: 12,
-      scaleBreaks: {customBreaks: [{
+      scaleBreaks: {
+        customBreaks:
+      [{
         startValue: 40,
         endValue: 50,
-        color: "green"
+        color: 'green'
       },
       {
         startValue: 85,
         endValue: 100,
-        color: "orange"
+        color: 'orange'
       },
       {
         startValue: 140,
         endValue: 175,
-        color: "purple"
-      }
+        color: 'purple'
       }]
-    } // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
+      } // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
     },
     data: [{
       type: 'bar',
