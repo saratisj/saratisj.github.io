@@ -1,83 +1,85 @@
 body {
-    background: 
+  background: black;
 }
 
 .wrapper {
-    display:
-    flex-direction:
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 }
 
-.container {
-    min-height:
+@media only screen and (min-width: 1000px) {
+  .container {
+    min-height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    text-align:center;
+    justify-content: space-between;
+  }
 }
 
-.header{
-    color:
-    display:
-    flex-direction:
-    flex-wrap:
-    justify-content:
-    align-items:
-    margin:
-    margin-bottom:
-    padding:
-    border-radius:
+@media only screen and (max-width: 1000px) {
+  .container {
+    min-height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    text-align:center;
+    justify-content: center;
+  }
 }
 
-.flex-outer li,
-.flex-inner {
-  display:
-  flex-wrap:
-  align-items:
-  flex-direction:
+.header {
+  color: lightcoral;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
-
-.flex-outer > li > label,
-.flex-outer li p {
-  flex:
-  max-width: 
-  padding:
-}
- 
-.flex-outer > li > label + *,
-.flex-inner {
-  flex:
-}
-
-.flex-inner li {
-  width: 
-  padding: 
-  display: 
-  flex-direction:
-}
-
-.flex-inner input {
-  margin-right: 
-}
-
-.flex-inner {
-  padding:
-  justify-content: 
-}
-
-.flex-outer {
-  width:
-  padding: 
-  margin:
 
 h1 {
-  margin:
-  padding: 
-  min-height: 
-  background-color: 
-  color: 
-  display: 
-  
-  align-items: 
-  justify-content: 
-  font-weight: 
-  font-size: 
-  text-transform: 
-  flex-wrap: 
-  border-radius:
+  font-size: 30px;
+  -webkit-text-stroke: .4px beige;
+  -webkit-text-fill-color: lightcoral;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+input {
+  width: 40%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .cases li{
+    list-style-type: none;
+    color: black;
+    padding: 12px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    background: linear-gradient(lightcoral, beige);
+    text-align: center;
+    width: 90%;
+    flex: 0 1 auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cases li{
+    list-style-type: none;
+    color: black;
+    padding: 12px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+    background: linear-gradient(lightcoral, beige);
+    text-align: center;
+    width:90%;
+    flex: 1 0 auto;
+  }
 }
